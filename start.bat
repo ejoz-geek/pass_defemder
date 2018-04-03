@@ -1,1 +1,1 @@
-[absolte path to php] -f pass_defender.php
+[absolte path to php] -f sec_pass.php

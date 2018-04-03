@@ -24,5 +24,5 @@ All notable changes to this project will be documented in this file.
 - Command `php pass_defender.php decrypt`
 - Start
 
-[0.1.0]: https://github.com/ejoz-geek/pass_defender/releases/tag/v0.1.0-pre-alpha
-[0.0.1]: https://github.com/ejoz-geek/pass_defender/releases/tag/v0.0.1-pre-alpha
+[0.1.0]: https://github.com/ejoz-geek/secPass/releases/tag/v0.1.0-pre-alpha
+[0.0.1]: https://github.com/ejoz-geek/secPass/releases/tag/v0.0.1-pre-alpha
