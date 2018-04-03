@@ -23,7 +23,7 @@ limitations under the License.
 
 */
 error_reporting(E_ALL);
-define('VER', '0.2 pre-alpha' . PHP_EOL);
+define('VER', '0.1.0 pre-alpha' . PHP_EOL);
 
 start:
 $command = readline('>');
