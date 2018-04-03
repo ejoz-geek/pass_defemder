@@ -7,6 +7,8 @@
 ##                             ##
 @###############################@
 
+When the first start, update the file start.bat!
+
 Copyright 2018 Stas Smirnov
 
 Licensed under the Apache License, Version 2.0 (the "License");

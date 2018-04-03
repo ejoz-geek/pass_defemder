@@ -1,0 +1,1 @@
+[absolte path to php] -f pass_defender.php
