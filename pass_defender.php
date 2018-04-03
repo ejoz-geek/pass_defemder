@@ -161,36 +161,36 @@ function add_record ()
 }
 function decrypt ()
 {
-	print_r('Type your pin(more than 0100)...');
-	$factor = readline('>');
+	print_r('Type your pin...' . PHP_EOL);
+	$pin = readline('>');
 	$f = fopen(dirname($_SERVER['PHP_SELF']) . '/denoms.dat', 'rb');
-	$denoms = base64_decode(fread($f, filesize(dirname($_SERVER['PHP_SELF']) . '/denoms.dat')));
-	$denoms = json_decode($denoms, true);
+	$denoms = json_decode(base64_decode(fread($f, filesize(dirname($_SERVER['PHP_SELF']) . '/denoms.dat'))), true);
 	fclose($f);
 	$f = fopen(dirname($_SERVER['PHP_SELF']) . '/array.dat', 'rb');
 	$array = base64_decode(fread($f, filesize(dirname($_SERVER['PHP_SELF']) . '/array.dat')));
 	$len = strlen($array);
 	fclose($f);
 
-	for ($i = 0; $i < count($denoms) + 1; $i++)
+	for ($i = 0; $i < count($denoms); $i++)
 	{
 		print_r('----------------------' . PHP_EOL);
 		print_r('Name: ' . $denoms[$i + 1]['name'] . PHP_EOL);
 		print_r('Login: ' . $denoms[$i + 1]['login'] . PHP_EOL);
-		for ($f = 0; $f < count($denoms[$i + 1]['denoms']) + 1; $f++)
+		for ($f = 0; $f < count($denoms[$i + 1]['denoms']); $f++)
 		{
-			$char[$f] = substr($array, round(($len * ($factor / 100)) / $denoms[$i + 1]['denoms'][$f]), 1);
+			$char[$f] = substr($array, round(($len * ($pin / 100)) / $denoms[$i + 1]['denoms'][$f]), 1);
 		}
 		unset($f);
-		for ($f = 0; $f < count($denoms); $f++)
+		for ($f = 0; $f < count($denoms[$i + 1]['denoms']); $f++)
 		{
 			@$pass .= $char[$f];
 		}
 		unset($f);
 		unset($char);
+		unset($pass);
+
 		print_r('Pass: ' . $pass . PHP_EOL);
 		print_r('----------------------' . PHP_EOL);
-		unset($pass);
 	}
 	print_r('Success!' . PHP_EOL);
 	return;
