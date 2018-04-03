@@ -23,7 +23,7 @@ limitations under the License.
 
 */
 error_reporting(E_ALL);
-define('VER', '0.1.0 pre-alpha' . PHP_EOL);
+define('VER', '0.1.0-pre-alpha' . PHP_EOL);
 
 start:
 $command = readline('>');
@@ -77,15 +77,16 @@ function gen_array ()
 	}
 	else
 	{
-		define('CHARS', array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','v','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','R','S','T','U','V','X','Y','Z','0','1','2','3','4','5','6','7','8','9','.',',','(',')','[',']','!','?','&','^','%','@','*','$','<','>','|','+','-','{','}','`','~'));
+		$chars = array('a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','v','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','R','S','T','U','V','X','Y','Z','0','1','2','3','4','5','6','7','8','9','.',',','(',')','[',']','!','?','&','^','%','@','*','$','<','>','|','+','-','{','}','`','~');
 		for ($i = 0; $i < $len; $i++)
 		{
-			$index = random_int(0, count(CHARS) - 1);
-			@$array .= CHARS[$index];
+			$index = random_int(0, count($chars) - 1);
+			@$array .= $chars[$index];
 		}
 		$f = fopen(dirname($_SERVER['PHP_SELF']) . '/array.dat', 'w+b');
 		fwrite($f, base64_encode($array));
 		fclose($f);
+		unset($chars);
 	
 		$f = fopen(dirname($_SERVER['PHP_SELF']) . '/array.dat', 'rb');
 		$array = base64_decode(fread($f, filesize(dirname($_SERVER['PHP_SELF']) . '/array.dat')));
@@ -187,10 +188,11 @@ function decrypt ()
 		}
 		unset($f);
 		unset($char);
-		unset($pass);
-
+		
 		print_r('Pass: ' . $pass . PHP_EOL);
 		print_r('----------------------' . PHP_EOL);
+
+		unset($pass);
 	}
 	print_r('Success!' . PHP_EOL);
 	return;
