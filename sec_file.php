@@ -1,9 +1,7 @@
 <?php
 /*
 Main repository https://github.com/ejoz-geek/pass_defender
-When the first start, update the file start.bat
 You may download PHP from https://php.net/downloads.php
-
 
 ------------------------------------------------------------------------
 Copyright 2018 Stas Smirnov
@@ -23,7 +21,8 @@ limitations under the License.
 
 */
 error_reporting(E_ALL);
-define('VER', '0.1.0-pre-alpha' . PHP_EOL);
+define('VER', '1.1.1-pre-alpha' . PHP_EOL);
+print_r('Started secFile version ' . VER . PHP_EOL);
 
 start:
 $command = readline('>');

@@ -1,1 +1,0 @@
-[absolte path to php] -f sec_pass.php

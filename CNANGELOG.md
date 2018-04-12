@@ -1,7 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
+## [1.1.1] - 2018-04-12
+### Changed
+- Project renamed to 'secFile'
+- Changed direction of the project
 
-## [0.1.0] - 2018-04-03
+## [0.1.1] - 2018-04-03
 ### Added
 - Command `help`
 - Command `ver`
