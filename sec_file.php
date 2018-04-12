@@ -48,7 +48,7 @@ switch ($command)
 		gen_array();
 		goto start;
 		break;
-	case 'add_record':
+	case 'add_file':
 		add_record();
 		goto start;
 		break;

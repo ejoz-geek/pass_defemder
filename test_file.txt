@@ -1,0 +1,5 @@
+-------------------
+---- PASSWORDS ----
+-------------------
+site.com | login | pass
+another_site | another_login | another_pass
